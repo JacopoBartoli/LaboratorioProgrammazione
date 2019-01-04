@@ -158,10 +158,16 @@ TEST(Matrix, RowsAndColumns) {
     m2(0, 2) = 8;
     m2.rimuoviColonna(1);
     ASSERT_EQ(m2(0, 1), 8);
-
-    //toString
-    std::cout << mat2.toString() << std::endl;
-    std::cout << m2.toString() << std::endl;
+}
+TEST(Matrix, toString){
+    Matrice<int> m1(2,3),m2(2,3),m3(3,1);
+    m1.setElementi(0);
+    m2.setElementi(1);
+    m3.setElementi(0);
+    ASSERT_NE(m1.toString(),m2.toString());
+    ASSERT_NE(m1.toString(),m3.toString());
+    m2.setElementi(0);
+    ASSERT_EQ(m1.toString(),m2.toString());
 
 
 }

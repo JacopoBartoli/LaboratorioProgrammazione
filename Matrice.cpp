@@ -185,7 +185,7 @@ void Matrice<T>::rimuoviColonna(int indiceColonna) throw(out_of_range) {
 template<typename T>
 Matrice<T> Matrice<T>::operator=(const Matrice<T> &matrice) {
     if (this != &matrice) {
-        this->~Matrice();
+        delete [](elementi);
         numRighe = matrice.numRighe;
         numColonne = matrice.numColonne;
         elementi = new T[numRighe * numColonne];

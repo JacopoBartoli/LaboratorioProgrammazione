@@ -13,9 +13,6 @@ using namespace std;
 
 template<typename T>
 class Matrice {
-private:
-    int numRighe, numColonne;
-    T *elementi;
 public:
     //Costruttori
     Matrice(int numRighe, int numColonne);
@@ -79,6 +76,10 @@ public:
 
     //toString
     string toString() const;
+
+private:
+    int numRighe, numColonne;
+    T *elementi;
 };
 
 #endif //MATRIX_MATRIX_H
